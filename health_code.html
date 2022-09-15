@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杭州市扫码通行</title>
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="card">
+        <div id="date"></div>
+        <div id="time"></div>
+        <div id="line"></div>
+
+        <div id="name-card">
+            <div id="name"></div>
+            <div id="name-btn" onclick="showName()">显示</div>
+        </div>
+
+        <div id="scan">
+            <img src="img/scan.png" alt="">
+        </div>
+
+        
+        <div id="qrcode">
+            <div id="address"></div>
+            <img src="img/qrcode.png" alt="">
+            <div>杭州健康码</div>
+        </div>
+    </div>
+
+    <div class="card">
+        
+    </div>
+
+    <div id="run-card" class="card">
+        <img src="img/run-card.png" alt="">
+    </div>
+
+    <div id="foot">
+        <img src="img/foot.png" alt="">
+    </div>
+    
+    <div id="bg"></div>
+    
+    <script src="js/index.js"></script>
+    <script>
+        setDate();
+        setInterval('setDate()', 1000);
+
+        var name = getQueryVariable('name');
+        var address = getQueryVariable('address');
+        console.log('name=' + name + ' address=' + address);
+
+        var nameDiv = document.getElementById('name');
+        nameDiv.innerText = name;
+
+        var addressDiv = document.getElementById('address');
+        addressDiv.innerText = address;
+
+        function showName() {
+            console.log(name)
+        }
+    </script>
+</body>
+
+</html>
