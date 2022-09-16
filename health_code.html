@@ -33,8 +33,13 @@
         </div>
     </div>
 
-    <div class="card">
-        
+    <div id="result" class="card">
+        <!-- <div id="result-left">
+            <div id="count">24</div>
+            <div id="unit">小时内</div>
+            <div id="type">阴性</div>
+        </div> -->
+        <img src="img/result.png" alt="">
     </div>
 
     <div id="run-card" class="card">
@@ -52,18 +57,30 @@
         setDate();
         setInterval('setDate()', 1000);
 
+        var showFullName = false;
+
         var name = getQueryVariable('name');
         var address = getQueryVariable('address');
         console.log('name=' + name + ' address=' + address);
 
         var nameDiv = document.getElementById('name');
-        nameDiv.innerText = name;
+        nameDiv.innerText = replaceName(name);
 
         var addressDiv = document.getElementById('address');
         addressDiv.innerText = address;
 
+        var nameBtn = document.getElementById('name-btn');
+
         function showName() {
-            console.log(name)
+            if(showFullName) {
+                nameDiv.innerText = replaceName(name);
+                nameBtn.innerText = '隐藏';
+                showFullName = false;
+            } else {
+                nameDiv.innerText = name;
+                nameBtn.innerText = '显示';
+                showFullName = true;
+            }
         }
     </script>
 </body>

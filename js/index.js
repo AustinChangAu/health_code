@@ -26,3 +26,7 @@ function setDate() {
 function paddingZero(int) {
     return int < 10 ? '0' + int : int;
 }
+
+function replaceName(name) {
+    return name.substring(0, 1) + '*' + name.substring(2, name.length);
+}

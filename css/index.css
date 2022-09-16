@@ -89,6 +89,21 @@ body {
     margin: 0 auto;
 }
 
+#result {
+    margin: 10px 0 10px 0;
+    padding: 6px 8px 6px 8px;
+}
+
+#count {
+    position: absolute;
+    font-size: 41px;
+    font-weight: 300;
+}
+
+#result img {
+    width: 100%;
+}
+
 #run-card img {
     width: 100%;
 }
